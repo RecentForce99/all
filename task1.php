@@ -36,7 +36,7 @@ $a = "Длина тела — до 2 м, чаще 1—1,5 м. Максималь
 
     function lastTwoElements($array){
         for($i = count($array);$i > count($array)-3;$i--) { #Выбираем два последних элемента из массива
-        $el1[] = ' '.$array[$i]; 
+        $el1[] = ' '.$array[$i]; #Да, там написано -3, а не -2, потому что с -2 выделяет только 1 слово
 
     }
         return array_reverse($el1);
@@ -53,8 +53,8 @@ $a = "Длина тела — до 2 м, чаще 1—1,5 м. Максималь
 
     $lastTwoElWithLink = "<a href='$link2'>$arrayTwoEl...</a>"; #Добавляем ссылку на последние два слова
 
-    $taskComplete = $arrayLast.$lastTwoElWithLink; #Объединение всего предложения с последними двумя словами ссылкой
-    echo $taskComplete;
+    $b2 = $arrayLast.$lastTwoElWithLink; #Объединение всего предложения с последними двумя словами ссылкой
+    echo $b2;
 
 
 
