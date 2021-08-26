@@ -13,43 +13,43 @@
 
 
 
-// $size = GetImageSize ("image.jpg"); #получаем размеры картинки
-// $source = ImageCreateFromJPEG ("image.jpg"); #источник картинки
+ $size = GetImageSize ("image.jpg"); #получаем размеры картинки
+ $source = ImageCreateFromJPEG ("image.jpg"); #источник картинки
 
-// $width = $size[0]; 
-// $height = $size[1]; 
+ $width = $size[0]; 
+ $height = $size[1]; 
  
-// $new_height = 100; 
-// $new_width = 200;
+ $new_height = 100; 
+ $new_width = 200;
 
-// $new_data = ImageCreateTrueColor ($new_width, $new_height); #создаем новое изображения со своими размерами
+ $new_data = ImageCreateTrueColor ($new_width, $new_height); #создаем новое изображения со своими размерами
 
-// ImageCopyResampled ($new_data, $source, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+ ImageCopyResampled ($new_data, $source, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
 
-// ImageJPEG ($new_data, "new_photo.jpg", 100);
-// imagedestroy($source); #удаление источника, чтобы не перегружать память
-
-
-//     echo "<img src='new_photo.jpg'>";
+ ImageJPEG ($new_data, "new_photo.jpg", 100);
+ imagedestroy($source); #удаление источника, чтобы не перегружать память
 
 
+     echo "<img src='new_photo.jpg'>";
 
-// $size = GetImageSize ("image.jpg");
 
-// $source = ImageCreateFromJPEG ("image.jpg");
 
-// $width = $size[0];
-// $height = $size[1];
+ $size = GetImageSize ("image.jpg");
 
-// $koef = $width/200; #коэфф., который равен изначальной ширине, деленной на желаеммую ширину
+ $source = ImageCreateFromJPEG ("image.jpg");
 
-// $new_height = $height/$koef; #новая высота
+ $width = $size[0];
+ $height = $size[1];
 
-// $new_data = ImageCreateTrueColor (200, $new_height);
+ $koef = $width/200; #коэфф., который равен изначальной ширине, деленной на желаеммую ширину
 
-// ImageCopyResampled ($new_data, $source, 0, 0, 0, 0, 200, $new_height, $width, $height);
+ $new_height = $height/$koef; #новая высота
 
-// ImageJPEG ($new_data, "new_photo2.jpg", 100);
-// imagedestroy($source);
+ $new_data = ImageCreateTrueColor (200, $new_height);
 
-//     echo "<img src='new_photo2.jpg'>";
+ ImageCopyResampled ($new_data, $source, 0, 0, 0, 0, 200, $new_height, $width, $height);
+
+ ImageJPEG ($new_data, "new_photo2.jpg", 100);
+ imagedestroy($source);
+
+     echo "<img src='new_photo2.jpg'>";
